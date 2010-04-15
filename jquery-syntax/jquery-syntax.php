@@ -27,7 +27,7 @@ function jq_syntax_htmlentities ($match) {
 	} else {
 		$code = htmlentities($match[2]);
 	}
-	
+
 	return "<pre$attrs>$code</pre>";
 }
 
@@ -50,13 +50,14 @@ function jq_syntax_loaded() {
 
 function jq_syntax_header () {
 	$plugin_root = plugins_url("/jquery-syntax/");
-	$syntax_root = $plugin_root.'/jquery-syntax/';
+	$syntax_root = $plugin_root.'jquery-syntax/';
 	
-	?>
-		<script type="text/javascript">
-			jQuery.noConflict(); jQuery(document).ready(function($) { Syntax.root = "<?php echo $syntax_root ?>"; $.syntax({layout: 'table', replace: true}) });
-		</script>
-	<?php
+?>
+	<link rel="stylesheet" href="<?php echo $plugin_root . "wp-fixes.css" ?>" type="text/css" media="screen" />
+	<script type="text/javascript">
+		jQuery.noConflict(); jQuery(document).ready(function($) { Syntax.root = "<?php echo $syntax_root ?>"; $.syntax({layout: 'table', replace: true}) });
+	</script>
+<?php
 }
 
 add_action('plugins_loaded', 'jq_syntax_loaded');

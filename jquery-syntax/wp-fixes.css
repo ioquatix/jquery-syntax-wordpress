@@ -1,0 +1,15 @@
+/* These are purely to fix bugs in the default configuration of WordPress */
+
+/* "View Raw Code" window */
+#syntax-raw {
+	/* Text is centered by default in body -_- */
+	text-align: inherit;
+	
+	/* Default font size is too small! */
+	font-size: 13px;
+}
+
+/* Table alt row highlighter */
+table.syntax tr.alt {
+	border-left: inherit;
+}
