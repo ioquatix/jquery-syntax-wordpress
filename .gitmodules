@@ -1,0 +1,3 @@
+[submodule "jquery-syntax/jquery-syntax"]
+	path = jquery-syntax/jquery-syntax
+	url = git://github.com/ioquatix/jquery-syntax.git

@@ -1,0 +1,25 @@
+# 
+#	This file is part of the "jQuery.Syntax" project, and is licensed under the GNU AGPLv3.
+#
+#	See <jquery.syntax.js> for licensing details.
+#
+#	Copyright 2010 Samuel Williams. All rights reserved.
+#
+
+require 'stringio'
+require 'fileutils'
+require 'set'
+
+PLUGIN_ZIP = "jquery-syntax-wordpress.zip"
+
+task :build_plugin do
+	Dir.chdir(File.dirname(__FILE__)) do
+		FileUtils::Verbose.rm_f(PLUGIN_ZIP);
+		
+		Dir.glob("**/*.{php,js,css}") do |path|
+			system("zip", PLUGIN_ZIP, path)
+		end
+	end
+end
+
+task :default => :build_plugin
