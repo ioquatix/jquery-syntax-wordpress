@@ -5,6 +5,6 @@ jQuery.Syntax is a light-weight client-side syntax highlighter, which dynamicall
 This is the WordPress Plugin. It includes jQuery-1.4.1.min.js and jQuery.Syntax. It works using the standard <pre class="syntax brush-LANGUAGE"> syntax.
 
 For download, documentation, compatibility, please see :
-	<http://www.oriontransfer.co.nz/software/jquery-syntax/>.
+	http://www.oriontransfer.co.nz/software/jquery-syntax/
 
 For licensing details, please see the included LICENSE.txt.
