@@ -16,7 +16,7 @@ task :build_plugin do
 	Dir.chdir(File.dirname(__FILE__)) do
 		FileUtils::Verbose.rm_f(PLUGIN_ZIP);
 		
-		Dir.glob("**/*.{php,js,css}") do |path|
+		Dir.glob("jquery-syntax/**/*.{php,js,css}") do |path|
 			system("zip", PLUGIN_ZIP, path)
 		end
 	end
