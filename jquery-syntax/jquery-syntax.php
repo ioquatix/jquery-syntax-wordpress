@@ -20,21 +20,28 @@ if (!defined("WP_CONTENT_URL")) define("WP_CONTENT_URL", get_option("siteurl") .
 if (!defined("WP_PLUGIN_URL"))  define("WP_PLUGIN_URL",  WP_CONTENT_URL        . "/plugins");
 
 function jq_syntax_htmlentities ($match) {
-	$attrs = $match[1];
+	// We only modify those which are syntax highlighted.
+	if (!preg_match("/syntax/", $match[0]))
+		return $match[0];
+	
+	$attrs = $match[2];
 	
 	if (preg_match("/escaped/", $attrs)) {
-		$code = $match[2];
+		$code = $match[3];
 	} else {
-		$code = htmlentities($match[2]);
+		$code = htmlentities($match[3]);
 	}
 
-	return "<pre$attrs>$code</pre>";
+	$tag = $match[1];
+
+	return "<$tag$attrs>$code</$tag>";
 }
 
 function jq_syntax_quote($content) {
-	$result = preg_replace_callback('/<pre(.*?)>(.*?)<\/pre>/imsu',jq_syntax_htmlentities, $content);
+	$content = preg_replace_callback('/<(pre)(.*?)>(.*?)<\/pre>/imsu',jq_syntax_htmlentities, $content);
+	$content = preg_replace_callback('/<(code)(.*?)>(.*?)<\/code>/imsu',jq_syntax_htmlentities, $content);
 	
-	return $result;
+	return $content;
 }
 
 function jq_syntax_loaded() {
@@ -55,7 +62,7 @@ function jq_syntax_header () {
 ?>
 	<link rel="stylesheet" href="<?php echo $plugin_root . "wp-fixes.css" ?>" type="text/css" media="screen" />
 	<script type="text/javascript">
-		jQuery.noConflict(); jQuery(document).ready(function($) { Syntax.root = "<?php echo $syntax_root ?>"; $.syntax({layout: 'table', replace: true}) });
+		jQuery.noConflict(); jQuery(document).ready(function($) { $.syntax({root: '<?php echo $syntax_root ?>'}) });
 	</script>
 <?php
 }
