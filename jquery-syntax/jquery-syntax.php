@@ -5,7 +5,7 @@ Plugin URI: http://www.oriontransfer.co.nz/software/jquery-syntax
 Description: Syntax highlighting using <a href="http://www.oriontransfer.co.nz/software/jquery-syntax">jQuery.Syntax</a> supporting a wide range of popular languages.  Wrap code blocks with <code>&lt;pre class="syntax {language}"&gt;</code> and <code>&lt;/pre&gt;</code> where <code>{language}</code> is a jQuery.Syntax supported brush. You can also use <code>&lt;code&gt;</code> tags for inline highlighting.
 Author: Samuel Williams
 Author URI: http://www.oriontransfer.co.nz/
-Version: 1.9
+Version: 2.0
 */
 
 # 
@@ -46,19 +46,21 @@ function jq_syntax_quote($content) {
 
 function jq_syntax_loaded() {
 	$path = WP_PLUGIN_URL . '/jquery-syntax/';
+	$wp_version = get_bloginfo('version');
 	
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', $path . 'jquery-1.4.1.min.js');
+	// Version 3.0-beta1 has jQuery 1.4.2 :)
+	if (version_compare($wp_version, '3', '<')) {
+		wp_deregister_script('jquery');
+		wp_register_script('jquery', $path . 'jquery-1.4.1.min.js');
+	}
 	
 	wp_enqueue_script('jquery');
-	wp_enqueue_script('jquery.syntax', $path . 'jquery-syntax/jquery.syntax.js');
-	wp_enqueue_script('jquery.syntax.cache', $path . 'jquery-syntax/jquery.syntax.cache.js');
+	wp_enqueue_script('jquery.syntax', $path . 'jquery-syntax/jquery.syntax.min.js');
 }
 
 function jq_syntax_header () {
 	$plugin_root = plugins_url("/jquery-syntax/");
 	$syntax_root = $plugin_root.'jquery-syntax/';
-	
 ?>
 	<link rel="stylesheet" href="<?php echo $plugin_root . "wp-fixes.css" ?>" type="text/css" media="screen" />
 	<script type="text/javascript">

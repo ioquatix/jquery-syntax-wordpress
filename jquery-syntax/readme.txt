@@ -3,8 +3,8 @@ Contributors: Samuel Williams
 Donate link: http://www.pledgie.com/campaigns/8915
 Tags: formatting, code, highlight, syntax, syntax highlighting
 Requires at least: 2.9
-Tested up to: 2.9.2
-Stable tag: 1.9
+Tested up to: 3.0
+Stable tag: 2.0
 
 jQuery.Syntax is an extremely fast and lightweight syntax highlighter.
 
@@ -34,4 +34,4 @@ Alternatively, please review the instructions available here:
 1. Editing a post with source code.
 2. Viewing a post with source code.
 3. Clicking on the "View Raw Code" link.
-
+4. Running in Wordpress 3.0-beta1
