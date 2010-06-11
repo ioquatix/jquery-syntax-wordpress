@@ -1,4 +1,7 @@
-/* These are purely to fix bugs in the default configuration of WordPress */
+/*
+	These are purely to fix bugs in the default configuration of WordPress
+	With the new list layout, these are probably not needed.
+*/
 
 /* "View Raw Code" window */
 #syntax-raw {
@@ -12,4 +15,8 @@
 /* Table alt row highlighter */
 table.syntax tr.alt {
 	border-left: inherit;
+}
+
+.syntax {
+	font-size: 80%;
 }
