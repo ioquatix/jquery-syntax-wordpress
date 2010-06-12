@@ -4,13 +4,13 @@ Donate link: http://www.pledgie.com/campaigns/8915
 Tags: formatting, code, highlight, syntax, syntax highlighting
 Requires at least: 2.9
 Tested up to: 3.0
-Stable tag: 2.0
+Stable tag: 2.1
 
 jQuery.Syntax is an extremely fast and lightweight syntax highlighter.
 
 == Description ==
 
-jQuery.Syntax is an extremely fast and lightweight syntax highlighter. It has dynamic loading of syntax source files and integrates cleanly using CSS or modelines.
+jQuery.Syntax is an extremely fast and lightweight syntax highlighter. It has dynamic loading of syntax source files and integrates cleanly using CSS or modelines. It supports a large number of different programming languages.
 
 This WordPress plugin provides syntax highlighting using jQuery.Syntax, supporting a wide range of popular languages. It supports both block elements (pre) and inline elements (code) for highlighting.
 
