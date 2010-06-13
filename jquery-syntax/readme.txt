@@ -4,7 +4,7 @@ Donate link: http://www.pledgie.com/campaigns/8915
 Tags: formatting, code, highlight, syntax, syntax highlighting
 Requires at least: 2.9
 Tested up to: 3.0
-Stable tag: 2.1
+Stable tag: 2.1.1
 
 jQuery.Syntax is an extremely fast and lightweight syntax highlighter.
 
