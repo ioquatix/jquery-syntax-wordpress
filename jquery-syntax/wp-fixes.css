@@ -17,6 +17,15 @@ table.syntax tr.alt {
 	border-left: inherit;
 }
 
+table.syntax tr td {
+	border-top: none !important;
+	border-bottom: none !important;
+}
+
 .syntax {
 	font-size: 80%;
+}
+
+table.syntax tr td {
+	padding: 0 0.4em 0 !important;
 }
