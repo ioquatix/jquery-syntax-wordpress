@@ -3,29 +3,11 @@
 	With the new list layout, these are probably not needed.
 */
 
-/* "View Raw Code" window */
-#syntax-raw {
-	/* Text is centered by default in body -_- */
-	text-align: inherit;
-	
-	/* Default font size is too small! */
-	font-size: 13px;
-}
-
-/* Table alt row highlighter */
-table.syntax tr.alt {
-	border-left: inherit;
-}
-
-table.syntax tr td {
-	border-top: none !important;
-	border-bottom: none !important;
-}
-
 .syntax {
 	font-size: 80%;
 }
 
-table.syntax tr td {
-	padding: 0 0.4em 0 !important;
+.syntax-container pre {
+	font-size: 80% !important;
+	line-height: 1.5em !important;
 }
