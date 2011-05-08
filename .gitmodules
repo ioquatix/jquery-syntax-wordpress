@@ -1,3 +1,3 @@
-[submodule "jquery-syntax/jquery-syntax"]
-	path = jquery-syntax/jquery-syntax
+[submodule "materials/jquery-syntax"]
+	path = materials/jquery-syntax
 	url = git://github.com/ioquatix/jquery-syntax.git
