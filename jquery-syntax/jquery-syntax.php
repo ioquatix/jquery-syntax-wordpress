@@ -5,16 +5,12 @@ Plugin URI: http://www.oriontransfer.co.nz/software/jquery-syntax
 Description: Syntax highlighting using <a href="http://www.oriontransfer.co.nz/software/jquery-syntax">jQuery.Syntax</a> supporting a wide range of popular languages.  Wrap code blocks with <code>&lt;pre class="syntax {language}"&gt;</code> and <code>&lt;/pre&gt;</code> where <code>{language}</code> is a jQuery.Syntax supported brush. You can also use <code>&lt;code&gt;</code> tags for inline highlighting.
 Author: Samuel Williams
 Author URI: http://www.oriontransfer.co.nz/
-Version: 2.3
+Version: 3.0
 */
 
-# 
-#	This file is part of the "jQuery.Syntax" project, and is licensed under the GNU AGPLv3.
-#
+#	This file is part of the "jQuery.Syntax" project, and is distributed under the MIT License.
 #	See <jquery.syntax.js> for licensing details.
-#
-#	Copyright 2010 Samuel Williams. All rights reserved.
-#
+#	Copyright (c) 2011 Samuel G. D. Williams. <http://www.oriontransfer.co.nz>
 
 if (!defined("WP_CONTENT_URL")) define("WP_CONTENT_URL", get_option("siteurl") . "/wp-content");
 if (!defined("WP_PLUGIN_URL"))  define("WP_PLUGIN_URL",  WP_CONTENT_URL        . "/plugins");
